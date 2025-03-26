@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Base Styles */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply antialiased text-gray-900;
+    }
+}
+
+/* Custom Components */
+@layer components {
+    .btn-primary {
+        @apply px-6 py-3 bg-accent-blue text-white rounded-full
+               font-medium shadow-lg transition-all duration-300
+               hover:bg-accent-blue-light hover:shadow-glow
+               active:scale-95;
+    }
+
+    .btn-secondary {
+        @apply px-6 py-3 border-2 border-gray-200 text-gray-700
+               rounded-full font-medium transition-colors duration-300
+               hover:border-accent-blue hover:text-accent-blue;
+    }
+
+    .utc-timestamp {
+        @apply font-mono text-sm text-gray-600 tracking-wider;
+    }
+
+    .user-display {
+        @apply font-sans text-sm text-gray-700 font-medium;
+    }
+
+    .section-title {
+        @apply text-4xl font-bold text-gray-900 leading-tight;
+    }
+
+    .gradient-text {
+        @apply text-transparent bg-clip-text bg-gradient-to-r
+               from-accent-blue to-accent-blue-light;
+    }
+}
+
+/* Loading Animation */
+.loading-progress {
+    @apply h-1 bg-gradient-to-r from-accent-blue to-accent-blue-light
+           rounded-full overflow-hidden;
+    background-size: 200% 200%;
+    animation: gradient-shift 2s linear infinite;
+}
+
+/* Date Time Format Example: 2025-03-24 11:17:51 */
+.datetime-utc {
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+}
+
+/* User Login Display Example: Harold-Odro */
+.user-login {
+    @apply inline-flex items-center space-x-2 text-sm font-medium text-gray-700;
+}
+
+/* Modern scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #4070f4;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3560e0;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #4070f4 transparent;
+  }
+/* Animations */
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
